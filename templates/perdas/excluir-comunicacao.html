@@ -1,0 +1,8 @@
+<h1>Excluir comunicação de perda</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>
+    Você tem certeza que deseja excluir a bebida "{{ object }}"?
+  </p>
+  <input type="submit">
+</form>

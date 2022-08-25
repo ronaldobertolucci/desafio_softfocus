@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # meus apps
     'accounts',
+    'perdas',
+    'pages', # app para lidar com static pages
 
     # apps de terceiros
     'allauth',
@@ -122,6 +124,8 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_FORMS = {'signup': 'accounts.forms.CustomUserCreationForm'}
 
 # Internationalization
