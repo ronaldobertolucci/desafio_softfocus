@@ -122,6 +122,10 @@ header .logo {
   background: white;
   width: 100%;
 }
+.container-fluid.login .qoq {
+  font-size: 60pt;
+  color: white;
+}
 .container-fluid.login .login .form-check-label {
   font-size: 0.9rem;
   color: grey;
