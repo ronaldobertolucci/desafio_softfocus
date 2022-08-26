@@ -15,11 +15,4 @@ class CustomUserAdmin(UserAdmin):
         'is_staff',
     ]
 
-    # Caso seja necessário adicionar mais campos na PÁGINA admin
-
-    # fieldsets = UserAdmin.fieldsets + (
-    #     (None, {'fields': ('telefone',)}),
-    # add_fieldsets = UserAdmin.add_fieldsets + (
-    #     (None, {'fields': ('telefone',)}),
-
 admin.site.register(CustomUser, CustomUserAdmin)

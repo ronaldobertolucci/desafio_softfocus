@@ -126,7 +126,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_FORMS = {'signup': 'accounts.forms.CustomUserCreationForm'}
+ACCOUNT_ADAPTER = 'accounts.adapter.NoNewUsersAccountAdapter'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
