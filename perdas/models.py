@@ -13,7 +13,7 @@ class ComunicacaoDePerda(models.Model):
 
     nome_produtor = models.CharField(max_length=100, null=True)
     email_produtor = models.CharField(max_length=100, null=True)
-    cpf_produtor = models.CharField(max_length=14, null=True)
+    cpf_produtor = models.CharField(max_length=11, null=True)
     lat_lavoura = models.DecimalField(max_digits=22, decimal_places=16,
                                       null=True)
     lon_lavoura = models.DecimalField(max_digits=22, decimal_places=16,

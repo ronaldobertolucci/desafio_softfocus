@@ -1,6 +1,9 @@
+{% load static %}
 <h1>Nova comunicação de perda</h1>
 <form method='post' enctype="multipart/form-data">
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit">
 </form>
+<script src='{% static "js/jquery-3.6.0.js" %}'></script>
+<script src='{% static "js/validation.js" %}'></script>
