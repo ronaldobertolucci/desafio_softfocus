@@ -19,7 +19,7 @@ class ComunicacaoDePerdaTests(TestCase):
         self.comunicacao = ComunicacaoDePerda.objects.create(
             nome_produtor='Produtor Teste',
             email_produtor='teste@teste.com',
-            cpf_produtor='100.900.800-99',
+            cpf_produtor='10090080099',
             lat_lavoura=52.445,
             lon_lavoura=78.44544,
             tipo_lavoura='milho',
@@ -127,7 +127,7 @@ class ComunicacaoDePerdaTests(TestCase):
 
     def test_comunicacao_cpf_produtor_content(self):
         cpf_produtor_objeto = self.comunicacao.cpf_produtor
-        self.assertEqual(cpf_produtor_objeto, '100.900.800-99')
+        self.assertEqual(cpf_produtor_objeto, '10090080099')
 
     def test_comunicacao_lat_lavoura_content(self):
         lat_lavoura_objeto = self.comunicacao.lat_lavoura
