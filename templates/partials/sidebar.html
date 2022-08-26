@@ -1,0 +1,42 @@
+{% load static %}
+{% load django_bootstrap5 %}
+
+<div class="sidebar">
+  <div class="conteudo_logo">
+    <div class="logo">
+      <div class="logo_nome text-nowrap">Proagro Fácil</div>
+    </div>
+    <i class="fa fa-bars" id='btn'></i>
+  </div>
+  <ul class='nav_list'>
+    <li>
+      <a href="{% url 'dashboard' %}">
+        <i class="fas fa-tachometer-alt"></i>
+        <span class='links_nome'>Dashboard</span>
+      </a>
+      <span class='dica'>Dashboard</span>
+    </li>
+    <hr class='text-white'>
+    <li>
+      <a href="#">
+        <i class="fas fa-user"></i>
+        <span class='links_nome'>Meus dados</span>
+      </a>
+      <span class='dica'>Meus dados</span>
+    </li>
+    <hr class='text-white'>
+  </ul>
+  <div class="logoff">
+    <div class="texto-link">
+      <div class="detalhes">
+        <div class="texto">
+          Sair da sessão
+        </div>
+      </div>
+      <a href="{% url 'account_logout' %}">
+        <i class="fas fa-sign-out-alt" id='logout'></i>
+      </a>
+    </div>
+  </div>
+
+</div>
