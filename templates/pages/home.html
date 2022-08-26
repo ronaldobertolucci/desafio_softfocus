@@ -1,7 +1,52 @@
-<h1>Homepage</h1>
-{% if user.is_authenticated %}
-  <p><a href="{% url 'account_logout' %}">Sair</a></p>
-{% else %}
-  <p><a href="{% url 'account_login' %}">Entrar</a></p>
-  <p><a href="{% url 'account_signup' %}">Cadastrar</a></p>
-{% endif %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no">
+    <meta name="description" content="Teste prático proposto pela empresa Softfocus">
+    <title>ProagroFácil — Uma tecnologia Softfocus</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="{% static 'images/icon/logotipo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class='home'>
+    <header>
+      <div class="logo">
+        <a href="{% url 'home' %}">
+          <img src="{% static 'images/logo/softfocus.png' %}" alt="Softfocus" width="130" height="63">
+        </a>
+      </div>
+      <nav id='navbar'>
+        <ul>
+          <li class='nav-link login'>
+            {% if user.is_authenticated %}
+              <a class="button logout" href="{% url 'account_logout' %}">Sair</a>
+            {% else %}
+              <a class="button login" href="{% url 'account_login' %}" role="button">Acesse o sistema</a>
+            {% endif %}
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="content home">
+        <div class="card">
+          <div class="proagro">
+            <p class='titulo'>Proagro Fácil</p>
+            <p class='subtitulo'>Suas ocorrências de forma simples e segura</p>
+            <p class='info'>Mais de 130 mil pessoas já foram beneficiadas por nossa solução</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
