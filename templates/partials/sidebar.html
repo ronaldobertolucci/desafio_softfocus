@@ -1,5 +1,4 @@
 {% load static %}
-{% load django_bootstrap5 %}
 
 <div class="sidebar">
   <div class="conteudo_logo">
@@ -18,13 +17,27 @@
     </li>
     <hr class='text-white'>
     <li>
-      <a href="#">
+      <a href="{% url 'alterar_dados' user.id %}">
         <i class="fas fa-user"></i>
         <span class='links_nome'>Meus dados</span>
       </a>
       <span class='dica'>Meus dados</span>
     </li>
     <hr class='text-white'>
+    <li>
+      <a href="{% url 'nova_comunicacao' %}">
+        <i class="fa fa-plus"></i>
+        <span class='links_nome'>Nova comunicação</span>
+      </a>
+      <span class='dica'>Nova comunicação</span>
+    </li>
+    <li>
+      <a href="{% url 'comunicacoes' %}">
+        <i class="fas fa-th-list"></i>
+        <span class='links_nome'>Todas as comunicações</span>
+      </a>
+      <span class='dica'>Todas as comunicações</span>
+    </li>
   </ul>
   <div class="logoff">
     <div class="texto-link">

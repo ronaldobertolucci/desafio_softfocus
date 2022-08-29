@@ -26,6 +26,27 @@ body.home {
   background-size: cover;
 }
 
+body.main {
+  background: linear-gradient(
+    180deg,
+    #f8f8f8 0%,
+    #f1f1f1 50%,
+    #f6f6f6 100%
+  ) !important;
+}
+
+.btn {
+  border-radius: 75px !important;
+}
+.error.message {
+  font-weight: bold;
+  margin-top: 0.25rem;
+  margin-left: 0.2rem;
+  font-size: .775em;
+  color: #dc3545;
+}
+
+
 /*---------- Homepage ----------*/
 #navbar {
   display: flex;
@@ -146,7 +167,7 @@ header .logo {
   transition: all 0.5s ease;
 }
 .sidebar.ativo {
-  width: 240px;
+  width: 340px;
 }
 .sidebar .conteudo_logo .logo {
   color: white;
@@ -167,7 +188,7 @@ header .logo {
   margin-right: 5px;
 }
 .conteudo_logo .logo .logo_nome {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 400;
 }
 .sidebar #btn {
@@ -202,12 +223,12 @@ header .logo {
 }
 .sidebar ul li .dica{
   position: absolute;
-  left: 122px;
+  left: 175px;
   top: 0;
   transform: translate(-50%, -50%);
   border-radius: 6px;
   height: 35px;
-  width: 122px;
+  width: 240px;
   background: white;
   line-height: 35px;
   text-align: center;
@@ -310,17 +331,152 @@ header .logo {
 .main-content {
   position:absolute;
   height: 100%;
-  max-height: 100vh;
+  max-height: calc(100% - 60px);
   left: 78px;
+  top: 60px;
   width: calc(100% - 78px);
-  background-color: var(--main-background-color);
+  background: linear-gradient(
+    180deg,
+    #f8f8f8 0%,
+    #f1f1f1 50%,
+    #f6f6f6 100%
+  ) !important;
   transition: all 0.5 ease;
 }
 .main-content.ativo {
-  left: 240px;
-  width: calc(100% - 240px);
+  left: 340px;
+  width: calc(100% - 340px);
 }
 
+/************ forms ************/
+.main-content .form-perda {
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 0.2em #eee;
+}
+.main-content .form-perda.excluir {
+  max-width: 600px
+}
+.main-content .form-perda.excluir .msg-exclusao {
+  font-size: 12pt;
+}
+.main-content .form-perda .titulo {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #666;
+}
+.main-content .form-perda .titulo-conjunto {
+  font-size: 12pt;
+  font-weight: 700;
+  color: #777;
+  padding: 0;
+  margin: 0;
+}
+.main-content .form-perda .form-label, .main-content .form-perda .form-control{
+  font-size: 12pt !important;
+}
+.main-content .form-perda .form-select, .main-content .form-perda label{
+  font-size: 12pt !important;
+}
+.main-content .form-perda .btn-custom, .main-content .form-user .btn-custom {
+  background-color: #0081cd;
+  color: white
+}
+.main-content .form-perda .btn-custom:hover, .main-content .form-user .btn-custom:hover {
+  background-color: var(--main-dark-color);
+}
+
+/************ tabelas ************/
+.main-content .tabela {
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 0.2em #eee;
+}
+.main-content .tabela .titulo {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #666;
+}
+.main-content .tabela table {
+  font-size: 12pt;
+}
+.pagination a {
+  color: grey;
+  font-size: 12pt;
+}
+.pagination a:hover {
+  color: black;
+}
+.pagination span {
+  font-size: 12pt;
+}
+
+
+/************ header ************/
+.header {
+  position:absolute;
+  height: 60px;
+  left: 78px;
+  width: calc(100% - 78px);
+  background: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 2
+}
+.header.ativo {
+  left: 340px;
+  width: calc(100% - 340px);
+}
+.header p {
+  color: grey;
+  padding-right: 40px;
+  margin: 0;
+  font-size: 11pt;
+  text-transform: uppercase;
+}
+.navbar {
+  display: none !important;
+}
+
+/************ user update ************/
+.main-content .form-user {
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 0.2em #eee;
+}
+.main-content .form-user .titulo {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #666;
+}
+.main-content .form-user label, .main-content .form-user .form-control{
+  font-size: 12pt !important;
+}
+.container-fluid.user {
+  height: 85%;
+}
+
+/************ detalhes da perda ************/
+.detalhes {
+  font-size: 14pt;
+}
+.detalhes .secao .titulo-secao {
+  color: grey;
+  font-size: 16pt;
+}
+.detalhes .secao .evento {
+  font-weight: bold;
+}
 
 @media (max-width: 992px) {
   .content.home .card {
@@ -334,5 +490,38 @@ header .logo {
   }
   .content.home .proagro .info {
     font-size: 20px;
+  }
+
+  .main-content {
+    position: relative;
+    max-height: 0;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+  }
+  body {
+    overflow-y: auto;
+  }
+  body.main {
+    background: var(--main-dark-color);
+  }
+  .sidebar {
+    display: none;
+  }
+  .main-content .tabela table {
+    font-size: 12pt;
+  }
+  .main-content .form-perda .titulo, .main-content .tabela .titulo {
+    font-size: 18pt;
+  }
+  .main-content .form-perda .titulo-conjunto {
+    font-size: 10pt;
+  }
+
+  .header {
+    display: none;
+  }
+  .navbar {
+    display: flex !important;
   }
 }

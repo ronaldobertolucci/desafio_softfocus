@@ -1,3 +1,60 @@
-<h1>Comunicação de perda</h1>
-<p>{{object.nome_produtor}}</p>
-<p>{{object.tipo_lavoura}}</p>
+{% extends 'partials/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Comunicações de perda{% endblock title %}
+
+{% block content %}
+<div class="container-fluid p-0 m-0 d-flex justify-content-center detalhes">
+  <div class="col-11 col-lg-8">
+    <div class="overflow-auto form-perda">
+      <div class="row">
+        <div class="col-12">
+          <p class='titulo'>Detalhes da comunicação</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="secao produtor">
+          <p class='titulo-secao'>Dados do produtor</p>
+          <p>Nome: <span>{{object.nome_produtor}}</span></p>
+          <p>email: <span>{{object.email_produtor}}</span></p>
+          <p>CPF: <span>{{object.cpf_produtor}}</span></p>
+        </div>
+        <hr>
+        <div class="secao lavoura">
+          <p class='titulo-secao'>Dados da lavoura</p>
+          <p>Latitude: <span>{{object.lat_lavoura|floatformat:4 }}</span></p>
+          <p>Longitude: <span>{{object.lon_lavoura|floatformat:4 }}</span></p>
+          <p>Tipo: <span>{{object.tipo_lavoura}}</span></p>
+          <p>Data da colheita: <span>{{object.data_colheita}}</span></p>
+        </div>
+        <hr>
+        <div class=" secao evento">
+          <p>Evento ocorrido:
+            <span class='evento'>
+              {% if object.evento == '1' %}
+                CHUVA EXCESSIVA
+              {% elif object.evento == '2' %}
+                GEADA
+              {% elif object.evento == '3' %}
+                GRANIZO
+              {% elif object.evento == '4' %}
+                SECA
+              {% elif object.evento == '5' %}
+                VENDAVAL
+              {% elif object.evento == '6' %}
+                RAIO
+              {% endif %}
+            </span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src='{% static "js/jquery-3.6.0.js" %}'></script>
+<script src='{% static "js/sidebar.js" %}'></script>
+
+{% endblock content %}

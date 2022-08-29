@@ -22,4 +22,9 @@ urlpatterns = [
         ComunicacaoDePerdaDeleteView.as_view(),
         name='excluir_comunicacao'
     ),
+    path(
+        '',
+        ComunicacaoDePerdaListView.as_view(),
+        name='comunicacoes'
+    ),
 ]

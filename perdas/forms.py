@@ -8,10 +8,18 @@ class ComunicacaoDePerdaForm(forms.ModelForm):
         fields = ("nome_produtor", "email_produtor", "cpf_produtor",
                   "lat_lavoura", "lon_lavoura", "tipo_lavoura", "data_colheita",
                   "evento")
+        widgets = {
+            'lat_lavoura': forms.TextInput(attrs={
+                'placeholder': "Ex.: -22.194"}
+            ),
+            'lon_lavoura': forms.TextInput(attrs={
+                'placeholder': "Ex.: -46.757"}
+            ),
+        }
         labels = {
-            "nome_produtor": "Nome",
+            "nome_produtor": "Nome completo",
             "email_produtor": "email",
-            "cpf_produtor": "CPF",
+            "cpf_produtor": "CPF (somente números)",
             "lat_lavoura": "Latitude",
             "lon_lavoura": "Longitude",
             "tipo_lavoura": "Tipo da lavoura",

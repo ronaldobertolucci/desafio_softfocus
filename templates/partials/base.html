@@ -21,7 +21,7 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
   </head>
-  <body>
+  <body class='main'>
 
     <div class="">
       <div class="">
@@ -30,10 +30,18 @@
         {% endblock %}
       </div>
 
+      <div class=".header">
+        {% block header %}
+        {% include "partials/header.html" %}
+        {% endblock %}
+      </div>
+
       <div class="m-0 main-content">
         {% block content %}
         {% endblock content %}
       </div>
+
+
     </div>
 
   </body>

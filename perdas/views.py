@@ -11,7 +11,7 @@ class ComunicacaoDePerdaCreateView(LoginRequiredMixin, CreateView):
     form_class = ComunicacaoDePerdaForm
     model = ComunicacaoDePerda
     template_name = 'perdas/nova-comunicacao.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('comunicacoes')
 
 
 class ComunicacaoDePerdaDetailView(LoginRequiredMixin, DetailView):
@@ -23,10 +23,17 @@ class ComunicacaoDePerdaUpdateView(LoginRequiredMixin, UpdateView):
     form_class = ComunicacaoDePerdaForm
     model = ComunicacaoDePerda
     template_name = 'perdas/editar-comunicacao.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('comunicacoes')
 
 
 class ComunicacaoDePerdaDeleteView(LoginRequiredMixin, DeleteView):
     model = ComunicacaoDePerda
     template_name = "perdas/excluir-comunicacao.html"
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('comunicacoes')
+
+
+class ComunicacaoDePerdaListView(LoginRequiredMixin, ListView):
+    model = ComunicacaoDePerda
+    template_name = 'perdas/comunicacoes.html'
+    context_object_name = 'comunicacoes'
+    paginate_by = 8
