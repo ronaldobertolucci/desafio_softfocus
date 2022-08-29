@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 
 
-class PesquiseCPFListView(ListView):
+class PesquiseCPFListView(LoginRequiredMixin, ListView):
     model = ComunicacaoDePerda
     context_object_name = 'comunicacoes'
     template_name = 'perdas/pesquise-cpf.html'

@@ -393,6 +393,7 @@ header .logo {
   font-style: italic;
 }
 
+
 /************ tabelas ************/
 .main-content .tabela {
   background-color: white;
@@ -423,7 +424,17 @@ header .logo {
 .main-content .tabela.resultado {
   max-height: 80vh;
 }
-
+.tabela .btn-busca {
+  font-size: 12pt;
+  background-color: #0081cd;
+  color: white;
+  border-radius: 8px !important;
+  height: 98%;
+}
+.tabela .btn-busca:hover {
+  background-color: var(--main-dark-color);
+  color: white;
+}
 
 /********** custom scrollbar **********/
 ::-webkit-scrollbar {
