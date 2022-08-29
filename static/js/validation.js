@@ -1,4 +1,4 @@
-$(function() {
+(function() {
   $('form').on('submit', function (e) {
     var valid = {};                      // cria um objeto de validação
     var isValid;
@@ -126,4 +126,4 @@ $(function() {
       errorContainer.remove();                               // remova o erro
     }
   })
-})
+}());

@@ -28,11 +28,7 @@
       <nav id='navbar'>
         <ul>
           <li class='nav-link login'>
-            {% if user.is_authenticated %}
-              <a class="button logout" href="{% url 'account_logout' %}">Sair</a>
-            {% else %}
-              <a class="button login" href="{% url 'account_login' %}" role="button">Acesse o sistema</a>
-            {% endif %}
+            <a class="button login" href="{% url 'account_login' %}" role="button">Acesse o sistema</a>
           </li>
         </ul>
       </nav>

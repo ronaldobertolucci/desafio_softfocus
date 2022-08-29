@@ -1,4 +1,4 @@
-$(function() {
+(function() {
   const $btn = $('#btn')
   const $sidebar = $('.sidebar')
   const $mainContent = $('.main-content')
@@ -9,4 +9,4 @@ $(function() {
     $mainContent.toggleClass('ativo')
     $headerContent.toggleClass('ativo')
   })
-})
+}())
