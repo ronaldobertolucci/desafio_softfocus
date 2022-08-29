@@ -17,6 +17,7 @@ class ComunicacaoDePerdaTests(TestCase):
             password='testpass123'
         )
         self.comunicacao = ComunicacaoDePerda.objects.create(
+            analista=self.analista,
             nome_produtor='Produtor Teste',
             email_produtor='teste@teste.com',
             cpf_produtor='10090080099',
@@ -62,7 +63,7 @@ class ComunicacaoDePerdaTests(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(no_response.status_code, 404)
         self.assertEqual(user_response.status_code, 200)
-        self.assertContains(user_response, 'Comunicação de perda')
+        self.assertContains(user_response, 'Detalhes da comunicação')
         self.assertTemplateUsed(
             user_response, 'perdas/comunicacao.html'
         )
@@ -116,7 +117,32 @@ class ComunicacaoDePerdaTests(TestCase):
             ComunicacaoDePerdaDeleteView.as_view().__name__
         )
 
+    def test_comunicacao_list_view(self):
+        view = resolve(f'/perdas/')
+        url = reverse('comunicacoes')
+        response = self.client.get(url)
+        no_response = self.analista_logado.get(f'/pErdAs/')
+        user_response = self.analista_logado.get(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(no_response.status_code, 404)
+        self.assertEqual(user_response.status_code, 200)
+        self.assertContains(user_response, 'Todas as comunicações')
+        self.assertTemplateUsed(
+            user_response, 'perdas/comunicacoes.html'
+        )
+        self.assertNotContains(
+            user_response, 'Ei! Não estou na página.'
+        )
+        self.assertEqual(
+            view.func.__name__,
+            ComunicacaoDePerdaListView.as_view().__name__
+        )
+
     # model tests
+    def test_comunicacao_analista_content(self):
+        analista_objeto = self.comunicacao.analista
+        self.assertEqual(analista_objeto, self.analista)
+
     def test_comunicacao_nome_produtor_content(self):
         nome_produtor_objeto = self.comunicacao.nome_produtor
         self.assertEqual(nome_produtor_objeto, 'Produtor Teste')
