@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth import get_user_model
 
 class ComunicacaoDePerda(models.Model):
     TIPOS_EVENTOS = [
@@ -10,7 +10,8 @@ class ComunicacaoDePerda(models.Model):
         ('5', 'VENDAVAL'),
         ('6', 'RAIO'),
     ]
-
+    analista = models.ForeignKey(get_user_model(), null=True,
+                                 on_delete=models.DO_NOTHING)
     nome_produtor = models.CharField(max_length=100, null=True)
     email_produtor = models.CharField(max_length=100, null=True)
     cpf_produtor = models.CharField(max_length=11, null=True)

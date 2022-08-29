@@ -13,6 +13,10 @@ class ComunicacaoDePerdaCreateView(LoginRequiredMixin, CreateView):
     template_name = 'perdas/nova-comunicacao.html'
     success_url = reverse_lazy('comunicacoes')
 
+    def form_valid(self, form):
+        form.instance.analista = self.request.user
+        return super().form_valid(form)
+
 
 class ComunicacaoDePerdaDetailView(LoginRequiredMixin, DetailView):
     model = ComunicacaoDePerda
