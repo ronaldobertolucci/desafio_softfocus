@@ -7,9 +7,14 @@
 {% block content %}
 <div class="container-fluid p-0 m-0">
   <div class="tabela overflow-auto">
-    <div class="row">
-      <div class="col-12">
+    <div class="row mb-3">
+      <div class="col-12 col-lg-7 col-xxl-9">
         <p class='titulo'>Todas as comunicações</p>
+      </div>
+      <div class="col-12 col-lg-5 col-xxl-3">
+        <form class="form-inline" action="{% url 'pesquise_cpf' %}" method="get">
+          <input name="q" class="form-control busca" type="text" placeholder="Pesquise pelo CPF do produtor" aria-label="Search">
+        </form>
       </div>
     </div>
     <div class="table-responsive">
@@ -17,6 +22,7 @@
         <thead>
           <tr style='color:grey; font-weight: 700'>
             <td>Produtor</td>
+            <td>CPF</td>
             <td>Lat. lavoura</td>
             <td>Lon. lavoura</td>
             <td>Tipo</td>
@@ -30,6 +36,9 @@
         <tr>
           <td>
             {{ comunicacao.nome_produtor }}
+          </td>
+          <td>
+            {{ comunicacao.cpf_produtor }}
           </td>
           <td>
             {{ comunicacao.lat_lavoura|floatformat:4 }}

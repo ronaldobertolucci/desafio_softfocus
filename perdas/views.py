@@ -5,6 +5,19 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import ComunicacaoDePerda
 from .forms import ComunicacaoDePerdaForm
 from django.urls import reverse_lazy
+from django.db.models import Q
+
+
+class PesquiseCPFListView(ListView):
+    model = ComunicacaoDePerda
+    context_object_name = 'comunicacoes'
+    template_name = 'perdas/pesquise-cpf.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return ComunicacaoDePerda.objects.filter(
+            Q(cpf_produtor__iexact=query) | Q(cpf_produtor__exact=query)
+        )
 
 
 class ComunicacaoDePerdaCreateView(LoginRequiredMixin, CreateView):

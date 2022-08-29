@@ -27,4 +27,5 @@ urlpatterns = [
         ComunicacaoDePerdaListView.as_view(),
         name='comunicacoes'
     ),
+    path('cpf/', PesquiseCPFListView.as_view(), name='pesquise_cpf'),
 ]

@@ -388,6 +388,10 @@ header .logo {
 .main-content .form-perda .btn-custom:hover, .main-content .form-user .btn-custom:hover {
   background-color: var(--main-dark-color);
 }
+.form-control.busca {
+  font-size: 12pt;
+  font-style: italic;
+}
 
 /************ tabelas ************/
 .main-content .tabela {
@@ -415,6 +419,26 @@ header .logo {
 }
 .pagination span {
   font-size: 12pt;
+}
+.main-content .tabela.resultado {
+  max-height: 80vh;
+}
+
+
+/********** custom scrollbar **********/
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 

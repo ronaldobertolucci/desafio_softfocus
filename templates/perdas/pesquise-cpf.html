@@ -1,0 +1,110 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Busca por CPF{% endblock title %}
+
+{% block content %}
+<div class="container-fluid p-0 mb-4">
+  <div class="tabela resultado overflow-auto ">
+    <div class="row mb-3">
+      <div class="col-12 col-lg-7 col-xxl-9">
+        <p class='titulo'>Resultados</p>
+      </div>
+      <div class="col-12 col-lg-5 col-xxl-3">
+        <form class="form-inline" action="{% url 'pesquise_cpf' %}" method="get">
+          <input name="q" class="form-control busca" type="text" placeholder="Pesquise pelo CPF do produtor" aria-label="Search">
+        </form>
+      </div>
+    </div>
+    <div class="table-responsive">
+      {% if comunicacoes %}
+        <table class="table table-nowrap align-middle table-hover ">
+          <thead>
+            <tr style='color:grey; font-weight: 700'>
+              <td>Produtor</td>
+              <td>CPF</td>
+              <td>Lat. lavoura</td>
+              <td>Lon. lavoura</td>
+              <td>Tipo</td>
+              <td>Data da colheita</td>
+              <td>Evento de perda</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody class='text-nowrap'>
+          {% for comunicacao in comunicacoes %}
+          <tr>
+            <td>
+              {{ comunicacao.nome_produtor }}
+            </td>
+            <td>
+              {{ comunicacao.cpf_produtor }}
+            </td>
+            <td>
+              {{ comunicacao.lat_lavoura|floatformat:4 }}
+            </td>
+            <td>
+              {{ comunicacao.lon_lavoura|floatformat:4 }}
+            </td>
+            <td>
+              {{ comunicacao.tipo_lavoura }}
+            </td>
+            <td>
+              {{ comunicacao.data_colheita|date:"d-m-Y" }}
+            </td>
+            <td>
+              {% if comunicacao.evento == '1' %}
+                CHUVA EXCESSIVA
+              {% elif comunicacao.evento == '2' %}
+                GEADA
+              {% elif comunicacao.evento == '3' %}
+                GRANIZO
+              {% elif comunicacao.evento == '4' %}
+                SECA
+              {% elif comunicacao.evento == '5' %}
+                VENDAVAL
+              {% elif comunicacao.evento == '6' %}
+                RAIO
+              {% endif %}
+            </td>
+            <td style='width: 120px'>
+              <div>
+                <ul class="list-inline mb-0 font-size-16">
+                  <li class="list-inline-item">
+                    <a href="{% url 'comunicacao' comunicacao.pk %}" class="text-primary p-1">
+                      <i class="fa fa-info-circle" title='Ver detalhes'></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="{% url 'editar_comunicacao' comunicacao.pk %}" class="text-success p-1">
+                      <i class="fas fa-edit" title='Editar comunicação'></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="{% url 'excluir_comunicacao' comunicacao.pk %}" class="text-danger p-1">
+                      <i class="fa fa-trash" title='Excluir comunicação'></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <div class="no-results">
+          Nenhum resultado foi encontrado.
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+
+<script src='{% static "js/jquery-3.6.0.js" %}'></script>
+<script src='{% static "js/sidebar.js" %}'></script>
+
+{% endblock content %}
