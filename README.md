@@ -1,13 +1,9 @@
 # Guia de instalação e utilização deste projeto 
 
-## Requerimentos
-- Docker
-- Git
-
 ## Deployment
-Este projeto também está online na plataforma Heroku em [www]()
-- login:
-- senha:
+Este projeto também está online na plataforma Heroku em [pagrofacil.herokuapp.com](https://pagrofacil.herokuapp.com/)
+- login: analista@exemplo.com.br
+- senha: desafiosf2022
 
 ## Instalação 
 - Para ver o guia rápido de instalação, acesse esse [link](/guia/guia_inst.md)
@@ -32,11 +28,12 @@ Este projeto também está online na plataforma Heroku em [www]()
     <p>Na opção 'Meus dados', o analista pode alterar seu nome, sobrenome e email. Neste projeto, o cadastro de novo usuário e alteração de senha 
       foram desabilitadas.
     </p>
+    <p align='center'>
+      <img src="/guia/images/6.png" alt="home" style="max-width: 100%;">
+    </p>
   </li>
   <li>
-    <p> Em 'Nova comunicação', o usuário pode cadastrar uma comunicação de perda. No formulário, existem validações de email e CPF feitas em JavaScript, assim como uma 
-verificação de garantia de veracidade do evento informado, ou seja, caso o analista esteja inserindo uma comunicação de uma lavoura em um raio de 10km de outra já
-cadastrada, com a mesma data em ambas, mas com eventos diferentes, um alerta aparecerá na tela.
+    <p> Em 'Nova comunicação', o usuário pode cadastrar uma comunicação de perda. No formulário, há uma verificação de garantia de veracidade do evento informado, ou seja, caso o analista esteja inserindo uma comunicação em um raio de 10km de outra já cadastrada, com a mesma data em ambas, mas com eventos diferentes, um alerta aparecerá na tela. Além disso, no formulário, existem validações de email e CPF feitas em JavaScript.
     </p>
     <p align='center'>
       <img src="/guia/images/3.png" alt="home" style="max-width: 100%;">
