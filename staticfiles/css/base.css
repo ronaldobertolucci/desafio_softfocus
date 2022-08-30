@@ -1,0 +1,562 @@
+:root {
+  --main-color: #0095EE;
+  --main-dark-color: #0C5078;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-size: 16pt;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+body.login {
+  background: linear-gradient(180deg, #093e5d, var(--main-dark-color));
+}
+
+body.home {
+  background-image: url("/static/images/home/lavoura.jpg");
+  background-size: cover;
+}
+
+body.main {
+  background: linear-gradient(
+    180deg,
+    #f8f8f8 0%,
+    #f1f1f1 50%,
+    #f6f6f6 100%
+  ) !important;
+}
+
+.btn {
+  border-radius: 75px !important;
+}
+.error.message {
+  font-weight: bold;
+  margin-top: 0.25rem;
+  margin-left: 0.2rem;
+  font-size: .775em;
+  color: #dc3545;
+}
+
+
+/*---------- Homepage ----------*/
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 87px;
+  z-index: 1;
+}
+#navbar ul {
+  display: flex;
+  margin: 0 1rem;
+  list-style: none;
+}
+#navbar ul li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+li a {
+  display: block;
+  padding: 0 10px;
+  color: black;
+  text-decoration: none
+}
+header .logo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2
+}
+.content.home{
+  height: 80%;
+  width: 100%;
+}
+.content.home .card {
+  position: absolute;
+  top: 100px;
+  left: 135px;
+}
+.content.home .proagro {
+  padding: 40px;
+  color: white;
+}
+.content.home .proagro .titulo {
+  font-size: 70px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+.content.home .proagro .subtitulo {
+  font-size: 40px;
+  padding: 25px 0 15px 0;
+  margin: 0;
+}
+.content.home .proagro .info {
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+#navbar .login .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 5px;
+}
+#navbar .login .button.login {
+  background-color: #036c1a;
+}
+#navbar .login .button.login:hover {
+  background-color: #4CAF50;
+}
+#navbar .login .button.logout {
+  background-color: #a31c29;
+}
+#navbar .login .button.logout:hover {
+  background-color: #dc3545;
+}
+
+
+/*---------- Login ----------*/
+.container-fluid.login {
+  height: 95vh !important;
+}
+.container-fluid.login .login {
+  border-radius: 10px;
+  padding: 40px;
+  background: white;
+  width: 100%;
+}
+.container-fluid.login .qoq {
+  font-size: 60pt;
+  color: white;
+}
+.container-fluid.login .login .form-check-label {
+  font-size: 0.9rem;
+  color: grey;
+}
+.logo_branco {
+  filter: grayscale(1) brightness(2);
+}
+
+/********** sidebar **********/
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background: linear-gradient(180deg, #093e5d, var(--main-dark-color));
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+}
+.sidebar.ativo {
+  width: 340px;
+}
+.sidebar .conteudo_logo .logo {
+  color: white;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5 ease;
+}
+.sidebar.ativo .conteudo_logo .logo {
+  opacity: 1;
+  pointer-events: none;
+}
+.conteudo_logo .logo i {
+  font-size: 28px;
+  margin-right: 5px;
+}
+.conteudo_logo .logo .logo_nome {
+  font-size: 28px;
+  font-weight: 400;
+}
+.sidebar #btn {
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+.sidebar.ativo #btn {
+  left: 90%;
+}
+.sidebar ul {
+  margin-top: 20px;
+  padding-left: 0;
+}
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  line-height: 50px;
+}
+.sidebar.ativo ul li {
+  margin: 0 5px;
+}
+.sidebar ul li .dica{
+  position: absolute;
+  left: 175px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 240px;
+  background: white;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+  z-index: 2;
+}
+.sidebar.ativo ul li .dica{
+  display: none;
+}
+.sidebar ul li:hover .dica{
+  transition: all 0.5s ease;
+  top: 50%;
+  opacity: 1;
+}
+.sidebar ul li a, .logoff .texto-link a {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+  padding-left: 0;
+}
+.sidebar ul li a:hover, .logoff .texto-link a:hover {
+  color: black;
+  background: white;
+}
+.sidebar ul li a i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+.sidebar .links_nome{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar.ativo .links_nome{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.5 ease;
+}
+.sidebar .logoff {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.sidebar .logoff .texto-link {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background: rgba(33, 37, 41,0.5);
+  transition: all 0.5 ease;
+}
+.logoff .texto-link .detalhes {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.sidebar.ativo .texto-link .detalhes{
+  opacity: 1;
+  pointer-events: auto;
+}
+.texto-link .detalhes .texto {
+  font-size: 16px;
+  font-weight: 400;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  padding: 0 20px;
+}
+.texto-link #logout {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.5 ease;
+}
+.sidebar.ativo .texto-link #logout {
+  left: 90%;
+}
+
+/********** dashboard **********/
+.main-content {
+  position:absolute;
+  height: 100%;
+  max-height: calc(100% - 60px);
+  left: 78px;
+  top: 60px;
+  width: calc(100% - 78px);
+  background: linear-gradient(
+    180deg,
+    #f8f8f8 0%,
+    #f1f1f1 50%,
+    #f6f6f6 100%
+  ) !important;
+  transition: all 0.5 ease;
+}
+.main-content.ativo {
+  left: 340px;
+  width: calc(100% - 340px);
+}
+
+/************ forms ************/
+.main-content .form-perda {
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 0.2em #eee;
+}
+.main-content .form-perda.excluir {
+  max-width: 600px
+}
+.main-content .form-perda.excluir .msg-exclusao {
+  font-size: 12pt;
+}
+.main-content .form-perda .titulo {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #666;
+}
+.main-content .form-perda .titulo-conjunto {
+  font-size: 12pt;
+  font-weight: 700;
+  color: #777;
+  padding: 0;
+  margin: 0;
+}
+.main-content .form-perda .form-label, .main-content .form-perda .form-control{
+  font-size: 12pt !important;
+}
+.main-content .form-perda .form-select, .main-content .form-perda label{
+  font-size: 12pt !important;
+}
+.main-content .form-perda .btn-custom, .main-content .form-user .btn-custom {
+  background-color: #0081cd;
+  color: white
+}
+.main-content .form-perda .btn-custom:hover, .main-content .form-user .btn-custom:hover {
+  background-color: var(--main-dark-color);
+}
+.form-control.busca {
+  font-size: 12pt;
+  font-style: italic;
+}
+
+
+/************ tabelas ************/
+.main-content .tabela {
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 0.2em #eee;
+}
+.main-content .tabela .titulo {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #666;
+}
+.main-content .tabela table {
+  font-size: 12pt;
+}
+.pagination a {
+  color: grey;
+  font-size: 12pt;
+}
+.pagination a:hover {
+  color: black;
+}
+.pagination span {
+  font-size: 12pt;
+}
+.main-content .tabela.resultado {
+  max-height: 80vh;
+}
+.tabela .btn-busca {
+  font-size: 12pt;
+  background-color: #0081cd;
+  color: white;
+  border-radius: 8px !important;
+  height: 98%;
+}
+.tabela .btn-busca:hover {
+  background-color: var(--main-dark-color);
+  color: white;
+}
+
+/********** custom scrollbar **********/
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+/************ header ************/
+.header {
+  position:absolute;
+  height: 60px;
+  left: 78px;
+  width: calc(100% - 78px);
+  background: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 2
+}
+.header.ativo {
+  left: 340px;
+  width: calc(100% - 340px);
+}
+.header p {
+  color: grey;
+  padding-right: 40px;
+  margin: 0;
+  font-size: 11pt;
+  text-transform: uppercase;
+}
+.navbar {
+  display: none !important;
+}
+
+/************ user update ************/
+.main-content .form-user {
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 0.2em #eee;
+}
+.main-content .form-user .titulo {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #666;
+}
+.main-content .form-user label, .main-content .form-user .form-control{
+  font-size: 12pt !important;
+}
+.container-fluid.user {
+  height: 85%;
+}
+
+/************ detalhes da perda ************/
+.detalhes {
+  font-size: 14pt;
+}
+.detalhes .secao .titulo-secao {
+  color: grey;
+  font-size: 16pt;
+}
+.detalhes .secao .evento {
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .content.home .card {
+    left: 0px;
+  }
+  .content.home .proagro .titulo {
+    font-size: 50px;
+  }
+  .content.home .proagro .subtitulo {
+    font-size: 30px;
+  }
+  .content.home .proagro .info {
+    font-size: 20px;
+  }
+
+  .main-content {
+    position: relative;
+    max-height: 0;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+  }
+  body {
+    overflow-y: auto;
+  }
+  body.main {
+    background: var(--main-dark-color);
+  }
+  .sidebar {
+    display: none;
+  }
+  .main-content .tabela table {
+    font-size: 12pt;
+  }
+  .main-content .form-perda .titulo, .main-content .tabela .titulo {
+    font-size: 18pt;
+  }
+  .main-content .form-perda .titulo-conjunto {
+    font-size: 10pt;
+  }
+
+  .header {
+    display: none;
+  }
+  .navbar {
+    display: flex !important;
+  }
+}
