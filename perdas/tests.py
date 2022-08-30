@@ -142,7 +142,7 @@ class ComunicacaoDePerdaTests(TestCase):
         view = resolve(f'/perdas/cpf/')
         url = reverse('pesquise_cpf')
         response = self.client.get(url)
-        no_response = self.analista_logado.get(f'/CPF/')
+        no_response = self.analista_logado.get(f'/perdas/CPF/')
         user_response = self.analista_logado.get(url)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(no_response.status_code, 404)
@@ -157,6 +157,27 @@ class ComunicacaoDePerdaTests(TestCase):
         self.assertEqual(
             view.func.__name__,
             PesquiseCPFListView.as_view().__name__
+        )
+
+    def test_pesquise_cpf_view(self):
+        view = resolve(f'/perdas/exportar/')
+        url = reverse('exportar')
+        response = self.client.get(url)
+        no_response = self.analista_logado.get(f'/perdas/ExPorTar/')
+        user_response = self.analista_logado.get(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(no_response.status_code, 404)
+        self.assertEqual(user_response.status_code, 200)
+        self.assertContains(user_response, 'Exportar')
+        self.assertTemplateUsed(
+            user_response, 'perdas/exportar.html'
+        )
+        self.assertNotContains(
+            user_response, 'Ei! Não estou na página.'
+        )
+        self.assertEqual(
+            view.func.__name__,
+            ExportarComunicacaoDePerdaView.as_view().__name__
         )
 
     # model tests
