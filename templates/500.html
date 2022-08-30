@@ -1,0 +1,42 @@
+{% load static %}
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no">
+    <meta name="description" content="Teste prático proposto pela empresa Softfocus">
+    <title>Proagro Fácil</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="{% static 'images/icon/logotipo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+  </head>
+  <body class='login'>
+    <header>
+      <div class="logo">
+        <a href="{% url 'home' %}">
+          <img class='logo_branco' src="{% static 'images/logo/softfocus.png' %}" alt="Softfocus" width="130" height="63">
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="container-fluid login d-flex justify-content-center align-items-center">
+        <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-3">
+          <div class="qoq text-center">
+            404
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
