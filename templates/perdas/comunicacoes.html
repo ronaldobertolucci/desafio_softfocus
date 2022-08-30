@@ -43,7 +43,7 @@
           {% for comunicacao in comunicacoes %}
           <tr>
             <td>
-              {{ comunicacao.nome_produtor }}
+              {{ comunicacao.nome_produtor|upper }}
             </td>
             <td>
               {{ comunicacao.cpf_produtor }}
@@ -55,7 +55,7 @@
               {{ comunicacao.lon_lavoura|floatformat:4 }}
             </td>
             <td>
-              {{ comunicacao.tipo_lavoura }}
+              {{ comunicacao.tipo_lavoura|upper }}
             </td>
             <td>
               {{ comunicacao.data_colheita|date:"d-m-Y" }}

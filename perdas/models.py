@@ -29,7 +29,7 @@ class ComunicacaoDePerda(models.Model):
     class Meta:
         verbose_name = 'Comunicação de perda'
         verbose_name_plural = 'Comunicações de perda'
-        ordering = ['-atualizado_em']
+        ordering = ['-data_colheita']
 
     def __str__(self):
         return self.nome_produtor
