@@ -25,3 +25,12 @@ class ComunicacaoDePerdaForm(forms.ModelForm):
             "tipo_lavoura": "Tipo da lavoura",
             "data_colheita": "Data da colheita",
         }
+
+
+class ExportarDadosForm(forms.Form):
+    TIPOS_DE_SAIDA =(
+        ("csv", ".csv"),
+        ("xlsx", ".xlsx"),
+        ("json", ".json"),
+    )
+    tipo = forms.ChoiceField(choices = TIPOS_DE_SAIDA)

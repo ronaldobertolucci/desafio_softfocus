@@ -4,10 +4,11 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 from .models import ComunicacaoDePerda
-from .forms import ComunicacaoDePerdaForm
+from .forms import ComunicacaoDePerdaForm, ExportarDadosForm
 from django.urls import reverse_lazy
 from django.db.models import Q
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from .resources import ComunicacaoDePerdaResource
 
 
 class PesquiseCPFListView(LoginRequiredMixin, ListView):
@@ -63,3 +64,30 @@ class ComunicacaoDePerdaDataView(LoginRequiredMixin, View):
         perdas = ComunicacaoDePerda.objects.all()
         data = perdas.values()
         return JsonResponse(list(data), safe=False)
+
+
+class ExportarComunicacaoDePerdaView(LoginRequiredMixin, View):
+    context = {}
+
+    def get(self, request, *args, **kwargs):
+        form = ExportarDadosForm()
+        self.context['form'] = form
+        if request.GET:
+            tipo = request.GET['tipo']
+            return self.export(tipo)
+        return render(request,'perdas/exportar.html', self.context)
+
+    def export(self, tipo):
+        perdas_resource = ComunicacaoDePerdaResource()
+        dataset = perdas_resource.export()
+        if tipo == 'csv':
+            response = HttpResponse(dataset.csv, content_type=f'text/csv')
+        elif tipo == 'json':
+            response = HttpResponse(dataset.json,
+                                    content_type='application/json')
+        elif tipo == 'xlsx':
+            response = HttpResponse(dataset.xlsx,
+                                    content_type='application/vnd.ms-excel')
+        response['Content-Disposition'] = 'attachment;'
+        response['Content-Disposition'] += f'filename="perdas.{tipo}"'
+        return response
