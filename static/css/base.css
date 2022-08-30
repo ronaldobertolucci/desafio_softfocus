@@ -190,6 +190,7 @@ header .logo {
 .conteudo_logo .logo .logo_nome {
   font-size: 28px;
   font-weight: 400;
+  padding-left: 6px;
 }
 .sidebar #btn {
   position: absolute;
