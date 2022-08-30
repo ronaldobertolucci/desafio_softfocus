@@ -4,7 +4,11 @@
 {% block title %}Dashboard{% endblock title %}
 
 {% block content %}
-<h1>Dashboard</h1>
+<div class="container-fluid p-0 m-0 d-flex justify-content-center align-items-center h-100 dashboard">
+  <div class='col-12 col-lg-6 text-center'>
+    <img class='img-fluid' src="{% static 'images/logo/proagro.png' %}" alt="Proagro Fácil" width="600" height="144">
+  </div>
+</div>
 <script src='{% static "js/jquery-3.6.0.js" %}'></script>
 <script src='{% static "js/sidebar.js" %}'></script>
 {% endblock content %}
