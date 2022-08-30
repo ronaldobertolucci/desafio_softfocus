@@ -9,11 +9,11 @@ class ComunicacaoDePerdaForm(forms.ModelForm):
                   "lat_lavoura", "lon_lavoura", "tipo_lavoura", "data_colheita",
                   "evento")
         widgets = {
-            'lat_lavoura': forms.TextInput(attrs={
-                'placeholder': "Ex.: -22.194"}
+            'lat_lavoura': forms.NumberInput(attrs={
+                'placeholder': "Ex.: -22,194"}
             ),
-            'lon_lavoura': forms.TextInput(attrs={
-                'placeholder': "Ex.: -46.757"}
+            'lon_lavoura': forms.NumberInput(attrs={
+                'placeholder': "Ex.: -46,757"}
             ),
         }
         labels = {

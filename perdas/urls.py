@@ -28,4 +28,5 @@ urlpatterns = [
         name='comunicacoes'
     ),
     path('cpf/', PesquiseCPFListView.as_view(), name='pesquise_cpf'),
+    path('dados', ComunicacaoDePerdaDataView.as_view(), name='dados'),
 ]

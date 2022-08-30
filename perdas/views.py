@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import View
 from .models import ComunicacaoDePerda
 from .forms import ComunicacaoDePerdaForm
 from django.urls import reverse_lazy
 from django.db.models import Q
+from django.http import JsonResponse
 
 
 class PesquiseCPFListView(LoginRequiredMixin, ListView):
@@ -54,3 +56,10 @@ class ComunicacaoDePerdaListView(LoginRequiredMixin, ListView):
     template_name = 'perdas/comunicacoes.html'
     context_object_name = 'comunicacoes'
     paginate_by = 8
+
+
+class ComunicacaoDePerdaDataView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        perdas = ComunicacaoDePerda.objects.all()
+        data = perdas.values()
+        return JsonResponse(list(data), safe=False)
