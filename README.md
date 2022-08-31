@@ -36,7 +36,7 @@ Este projeto também está online na plataforma Heroku em [pagrofacil.herokuapp.
     <p> O usuário também pode cadastrar uma comunicação de perda em 'Nova comunicação'. No formulário, há uma verificação de garantia de veracidade do evento informado, ou seja, caso o analista esteja inserindo uma comunicação em um raio de 10km de outra já cadastrada, com a mesma data em ambas, mas com eventos diferentes, um alerta aparecerá na tela. Além disso, no formulário, existem validações de email e CPF feitas em JavaScript.
     </p>
     <p align='center'>
-      <img src="/guia/images/3.png" alt="alerta" width="700">
+      <img src="/guia/images/3.png" alt="alerta" width="900">
     </p>
   </li>
   <li>
