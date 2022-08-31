@@ -31,7 +31,7 @@
                   columnClass: 'col-6',
                   buttons: {
                     tryAgain: {
-                      text: 'Continuar mesmo assim',
+                      text: 'OK, ENTENDI',
                       btnClass: 'btn-red',
                       action: function(){
                       }
