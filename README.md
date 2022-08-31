@@ -5,14 +5,14 @@ Este projeto também está online na plataforma Heroku em [pagrofacil.herokuapp.
 - login: analista@exemplo.com.br
 - senha: desafiosf2022
 
-## Instalação 
+## Instalação
 - Para ver o guia rápido de instalação, acesse esse [link](/guia/guia_inst.md)
 
 ## Como utilizar o programa
 <ul>
   <li>
     <p> O acesso ao sistema é feito pelo botão no canto superior direito. Se estiver testando a versão online, o acesso pode ser feito com as credencias
-      disponibilizadas acima. 
+      disponibilizadas acima.
     </p>
     <p align='center'>
       <img src="/guia/images/1.png" alt="home">
@@ -25,7 +25,7 @@ Este projeto também está online na plataforma Heroku em [pagrofacil.herokuapp.
     </p>
   </li>
   <li>
-    <p>Na opção 'Meus dados', o analista pode alterar seu nome, sobrenome e email. Neste projeto, o cadastro de novo usuário e alteração de senha 
+    <p>Na opção 'Meus dados', o analista pode alterar seu nome e sobrenome. Neste projeto, o cadastro de novo usuário e alteração de senha 
       foram desabilitadas.
     </p>
     <p align='center'>
@@ -40,7 +40,7 @@ Este projeto também está online na plataforma Heroku em [pagrofacil.herokuapp.
     </p>
   </li>
   <li>
-    <p>No item 'Todas as comunicações', é possível ver as entradas feitas por qualquer analista e ainda fazer buscas de comunicações por CPF do produtor. 
+    <p>No item 'Todas as comunicações', é possível ver as entradas feitas por qualquer analista e ainda fazer buscas de comunicações por CPF do produtor.
     </p>
     <p align='center'>
       <img src="/guia/images/4.png" alt="cpf" width="900">
