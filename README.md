@@ -47,7 +47,7 @@ Este projeto também está online na plataforma Heroku em [pagrofacil.herokuapp.
     </p>
   </li>
   <li>
-    <p>Cada entrada na lista, possui ícones para ver detalhes, editar ou excluir a comunicação de perda.</p>
+    <p>Cada entrada na lista possui ícones para ver detalhes, editar ou excluir a comunicação de perda.</p>
     <p align='center'>
       <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/circle-info.svg" width="20" height="20">
       <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.x/svgs/solid/edit.svg" width="20" height="20">
