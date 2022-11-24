@@ -1,9 +1,26 @@
-# Guia de instalação e utilização do projeto
+# Desafio Softfocus - Setembro/2022
 
-## Deployment
-Este projeto também está online na plataforma Heroku em [pagrofacil.herokuapp.com](https://pagrofacil.herokuapp.com/)
-- login: analista@exemplo.com.br
-- senha: desafiosf2022
+## Critérios essenciais do desafio 
+1. A solução deveria ser desenvolvida em Python.
+2. A interface deveria ser criada em HTML.
+3. A solução deveria possibilitar o CRUD de uma comunicação de perda.
+4. Os dados deveriam ser salvos em um banco de dados: Postgres, MySQL, MongoDB ou Firebase.
+5. A comunicação de perda deveria possuir:
+    - Nome do produtor
+    - email do produtor
+    - CPF do produtor
+    - Localização da lavoura (latitude e longitude)
+    - Tipo da lavoura
+    - Data da colheita
+    - Evento ocorrido
+6. Quando o analista estivesse cadastrando uma nova comunicação, ele deveria ser informado caso existisse no banco de dados outra comunicação em um raio de
+menos de 10km com evento divergente.
+7. O projeto deveria conter validações para CPF e email feitas em JavaScript.
+8. Deveria ser possível realizar a busca de comunicações por CPF do produtor.
+9. O projeto deveria ser disponibilizado em repositório público.
+10. O projeto deveria possuir um README explicando como utilizar o app.
+
+:white_check_mark: Todos os critérios acima foram cumpridos
 
 ## Instalação
 - Para ver o guia rápido de instalação, acesse esse [link](/guia/guia_inst.md)
